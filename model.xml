@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and mandatory="true" name="FeedMashup">
+            <or abstract="true" mandatory="true" name="InputIntegration">
+                <or abstract="true" name="Input">
+                    <feature name="TextInput"/>
+                    <alt abstract="true" name="Required">
+                        <feature name="Feed"/>
+                        <feature name="Download"/>
+                        <feature name="Webhook"/>
+                        <feature name="Pipe"/>
+                    </alt>
+                </or>
+                <alt abstract="true" name="Integration">
+                    <feature name="Dailymotion"/>
+                    <feature name="Mixcloud"/>
+                    <feature name="Periscope"/>
+                    <feature name="Reddit"/>
+                    <feature name="Speedrun"/>
+                    <feature name="SVTPlay"/>
+                    <feature name="Tweets"/>
+                    <feature name="Ustream"/>
+                    <feature name="Vimeo"/>
+                </alt>
+            </or>
+            <or abstract="true" name="Manipulate">
+                <feature name="Filter"/>
+                <feature name="Replace"/>
+                <feature name="Unique"/>
+                <feature name="Truncate"/>
+                <feature name="Sort"/>
+                <feature name="Shorten"/>
+            </or>
+            <or abstract="true" name="Control">
+                <feature name="Combine"/>
+                <feature name="Duplicate"/>
+                <feature name="MergeItems"/>
+                <feature name="ForEach"/>
+            </or>
+            <or abstract="true" name="Create">
+                <feature name="Extract"/>
+                <feature name="Images"/>
+                <feature name="Tables"/>
+                <feature name="Insert"/>
+                <feature name="BuildFeed"/>
+            </or>
+        </and>
+    </struct>
+    <constraints>
+        <rule>
+            <imp>
+                <conj>
+                    <var>Extract</var>
+                    <conj>
+                        <var>Images</var>
+                        <var>Tables</var>
+                    </conj>
+                </conj>
+                <disj>
+                    <var>Feed</var>
+                    <var>Download</var>
+                </disj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Insert</var>
+                <conj>
+                    <var>Feed</var>
+                    <var>Extract</var>
+                </conj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>BuildFeed</var>
+                <conj>
+                    <disj>
+                        <var>Feed</var>
+                        <var>Download</var>
+                    </disj>
+                    <var>Extract</var>
+                </conj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>MergeItems</var>
+                <conj>
+                    <var>Feed</var>
+                    <var>Extract</var>
+                </conj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>ForEach</var>
+                <disj>
+                    <var>Feed</var>
+                    <disj>
+                        <var>Download</var>
+                        <var>Tweets</var>
+                    </disj>
+                </disj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Pipe</var>
+                <not>
+                    <var>TextInput</var>
+                </not>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Required</var>
+                <not>
+                    <var>Integration</var>
+                </not>
+            </imp>
+        </rule>
+    </constraints>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
