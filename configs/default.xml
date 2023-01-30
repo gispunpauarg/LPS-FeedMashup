@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="FeedMashup"/>
+    <feature automatic="selected" name="InputIntegration"/>
+    <feature automatic="selected" name="Input"/>
+    <feature automatic="selected" name="Required"/>
+    <feature manual="selected" name="Feed"/>
+    <feature automatic="unselected" name="Download"/>
+    <feature automatic="unselected" name="Webhook"/>
+    <feature automatic="unselected" name="Pipe"/>
+    <feature automatic="unselected" name="Integration"/>
+    <feature automatic="unselected" name="Dailymotion"/>
+    <feature automatic="unselected" name="Mixcloud"/>
+    <feature automatic="unselected" name="Periscope"/>
+    <feature automatic="unselected" name="Reddit"/>
+    <feature automatic="unselected" name="Speedrun"/>
+    <feature automatic="unselected" name="SVTPlay"/>
+    <feature automatic="unselected" name="Tweets"/>
+    <feature automatic="unselected" name="Ustream"/>
+    <feature automatic="unselected" name="Vimeo"/>
+    <feature automatic="selected" name="Manipulate"/>
+    <feature manual="selected" name="Truncate"/>
+    <feature manual="selected" name="Sort"/>
+</configuration>
