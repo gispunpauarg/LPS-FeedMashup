@@ -4,7 +4,7 @@ Este desarrollo es parte de una tesis de la Maestría en Informática y Sistemas
 # Uso y licencia
 Si utiliza LPS-FeedMashup en su investigación, agradeceríamos que citase nuestro paper.
 ```
-@article{Reinaga_2022,
+@article{Reinaga_2021,
 	doi = {10.22305/ict-unpa.v13.n2.814}, 
 	url = {https://doi.org/10.22305/ict-unpa.v13.n2.814},
 	year = 2021,
